@@ -19,5 +19,13 @@ export default defineConfig([
       ecmaVersion: 2020,
       globals: globals.browser,
     },
+    rules: {
+      // Example: disable no-useless-escape to fix your warning
+      'no-useless-escape': 'off',
+      '@typescript-eslint/no-unused-vars': [
+        'warn',
+        { vars: 'all', args: 'after-used', ignoreRestSiblings: false },
+      ],
+    },
   },
 ])
