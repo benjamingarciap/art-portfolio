@@ -11,7 +11,11 @@ import 'swiper/css/navigation'
 import { Navigation } from 'swiper/modules'
 import formatTitleAndDetailsWithYear from '../lib/formatTitleAndDetailsWithYear'
 
-export default function App() {
+export default function App({
+  yearOfCreation,
+}: {
+  yearOfCreation?: string
+}): React.ReactElement {
   return (
     <>
       <Swiper
@@ -22,7 +26,12 @@ export default function App() {
         className="mySwiper"
       >
         {images.map((img, index) => {
-          const { title, details } = formatTitleAndDetailsWithYear(img.title)
+          const { title, details, year } = formatTitleAndDetailsWithYear(
+            img.title
+          )
+          if (yearOfCreation && year.toString() !== yearOfCreation) {
+            return null
+          }
           return (
             <SwiperSlide key={index} style={{ width: 'auto' }}>
               <img src={img.url} alt={img.title} />
