@@ -1,6 +1,8 @@
-const fs = require('fs')
-const cloudinary = require('cloudinary').v2
-require('dotenv').config()
+import fs from 'fs'
+import { v2 as cloudinary } from 'cloudinary'
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 const CLOUDINARY_CLOUD_NAME = 'dsncbmlkl'
 const CLOUDINARY_API_KEY = '985554679996448'
@@ -17,7 +19,7 @@ async function fetchImages() {
   const res = await cloudinary.api.resources({
     type: 'upload',
     prefix: 'art-portfolio-website/', // folder name in Cloudinary
-    max_results: 100,
+    max_results: 200,
   })
 
   const images = res.resources.map((r) => ({
