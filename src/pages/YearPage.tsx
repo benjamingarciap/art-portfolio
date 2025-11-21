@@ -1,6 +1,6 @@
 import React from 'react'
 // import Carousel from '../components/Carousel'
-import Swiper from '../components/Swiper'
+import Carousel from '../components/Carousel'
 import { useParams } from 'react-router-dom'
 
 export default function YearPage(): React.ReactElement {
@@ -8,7 +8,7 @@ export default function YearPage(): React.ReactElement {
   return (
     <div className="archive-page flex items-center justify-center min-h-screen pl-6">
       {/* <Carousel /> */}
-      <Swiper yearOfCreation={year} />
+      <Carousel yearOfCreation={year} />
     </div>
   )
 }

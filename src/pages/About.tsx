@@ -2,6 +2,10 @@ import React from 'react'
 export default function About(): React.ReactElement {
   return (
     <div className="pt-20 p-4 max-w-3xl mx-auto">
+      <img
+        src="https://res.cloudinary.com/dsncbmlkl/image/upload/v1763734021/art-portfolio-bio/Screenshot_2025-11-21_at_15.05.13_hsuicd.png"
+        alt=""
+      />
       <h2 className="text-3xl font-semibold mb-4">About</h2>
       <p className="mb-4">
         Born in 1986, Caracas (Venezuela). Currently based in Madrid (Spain).
