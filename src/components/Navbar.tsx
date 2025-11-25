@@ -32,7 +32,11 @@ export default function Navbar(): React.ReactElement {
       )}
     >
       <div>
-        <Link to="/" className="cursor-pointer">
+        <Link
+          to="/"
+          className="cursor-pointer"
+          onClick={() => setIsMenuOpen(false)}
+        >
           <h1
             className={clsx(
               'font-sans font-normal text-[28px] uppercase tracking-widest p-0 relative z-50',
