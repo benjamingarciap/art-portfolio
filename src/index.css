@@ -195,14 +195,19 @@ code {
 }
 
 .swiper-button-prev {
-  margin-top: -73px !important;
-  background-color: white;
+  margin-top: -64px !important;
+  background-color: black;
+  margin-left: 17px !important;
 }
 .swiper-button-next {
-  margin-top: -73px !important;
-  background-color: white;
+  margin-right: 17px !important;
+  margin-top: -64px !important;
+  background-color: black;
 }
 .swiper-navigation-icon {
+  color: white;
+  height: 18px !important;
 }
 .swiper-wrapper {
+  margin-top: 50px;
 }

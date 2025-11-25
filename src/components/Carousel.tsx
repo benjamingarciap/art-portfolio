@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react'
 import images from '../data/images.json'
@@ -16,14 +16,20 @@ export default function Carousel({
 }: {
   yearOfCreation?: string
 }): React.ReactElement {
+  const [visible, setVisible] = useState(false)
+  useEffect(() => {
+    setVisible(true)
+  }, [yearOfCreation])
   return (
     <>
       <Swiper
+        key={yearOfCreation}
         slidesPerView={'auto'}
         spaceBetween={30}
         navigation={true}
         modules={[Navigation]}
-        className="mySwiper"
+        className={`mySwiper transition-opacity duration-700 ease-out
+        ${visible ? 'opacity-100' : 'opacity-0'}`}
       >
         {images.map((img, index) => {
           const { title, details, year } = formatTitleAndDetailsWithYear(
