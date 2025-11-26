@@ -1,9 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { clsx } from 'clsx'
+
 export default function AboutInfo(): React.ReactElement {
+  const [isSmallScreen, setIsSmallScreen] = useState(false)
+
+  useEffect(() => {
+    function checkHeight() {
+      const small = window.innerHeight <= 667 || window.innerHeight === 740
+      setIsSmallScreen(small)
+      console.log('Height check:', window.innerHeight, small)
+    }
+    checkHeight()
+    window.addEventListener('resize', checkHeight)
+    return () => window.removeEventListener('resize', checkHeight)
+  }, [])
   return (
-    <div className="flex pt-30 px-10 gap-10">
+    <div
+      className={clsx(isSmallScreen && 'pt-[279px]', 'flex pt-30 px-10 gap-10')}
+    >
       <div className="w-full">
-        {/* <h2 className="text-2xl font-semibold mb-4 text-gray-800">About</h2> */}
+        <h2 className="text-3xl font-semibold mb-4">About</h2>
         <p className="mb-4 font-light text-gray-700 text-sm">
           Born in 1986, Caracas (Venezuela). Currently based in Madrid (Spain).
         </p>

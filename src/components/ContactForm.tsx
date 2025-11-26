@@ -1,6 +1,8 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import { Input, Field, Label } from '@headlessui/react'
 import FormButton from './FormButton'
+import clsx from 'clsx'
+
 export default function ContactForm({
   handleSubmit,
   status,
@@ -8,8 +10,20 @@ export default function ContactForm({
   handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void
   status: 'idle' | 'success' | 'error'
 }): React.ReactElement {
+  const [isSmallScreen, setIsSmallScreen] = useState(false)
+
+  useEffect(() => {
+    function checkHeight() {
+      const small = window.innerHeight <= 667 || window.innerHeight === 740
+      setIsSmallScreen(small)
+      console.log('Height check:', window.innerHeight, small)
+    }
+    checkHeight()
+    window.addEventListener('resize', checkHeight)
+    return () => window.removeEventListener('resize', checkHeight)
+  }, [])
   return (
-    <div className="w-full">
+    <div className={clsx(isSmallScreen && 'pt-[50px]', 'w-full')}>
       <div className="pt-20 p-4 max-w-3xl mx-auto">
         <h2 className="text-3xl font-semibold mb-10">Contact</h2>
         <form onSubmit={handleSubmit} className="space-y-8">
