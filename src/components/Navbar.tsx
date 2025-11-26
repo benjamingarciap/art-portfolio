@@ -67,15 +67,16 @@ export default function Navbar(): React.ReactElement {
           <ul className="flex space-x-4">
             <li>
               <Popover className="relative z-20">
-                {({ close }) => (
+                {({ close, open }) => (
                   <>
                     <PopoverButton
                       className={clsx(
                         textColor,
                         location.pathname.startsWith('/paintings')
-                          ? 'underline decoration-2 underline-offset-8'
+                          ? 'underline decoration-1 underline-offset-5'
                           : '',
-                        'focus:outline-none hover:text-gray-400 font-light cursor-pointer'
+                        'focus:outline-none hover:underline decoration-1 underline-offset-5 font-light cursor-pointer',
+                        open ? 'underline decoration-1 underline-offset-5' : ''
                       )}
                     >
                       Paintings
@@ -120,10 +121,10 @@ export default function Navbar(): React.ReactElement {
                   to={`/${item}`}
                   className={clsx(
                     location.pathname === `/${item}`
-                      ? 'underline decoration-2 underline-offset-8'
+                      ? 'underline decoration-1 underline-offset-5'
                       : '',
                     textColor,
-                    'hover:text-gray-400 font-light'
+                    'hover:underline decoration-1 underline-offset-5 font-light'
                   )}
                 >
                   {item.charAt(0).toUpperCase() + item.slice(1)}
