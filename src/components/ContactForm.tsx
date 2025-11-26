@@ -24,7 +24,7 @@ export default function ContactForm({
   }, [])
   return (
     <div className={clsx(isSmallScreen && 'pt-[50px]', 'w-full')}>
-      <div className="pt-20 mx-auto h-screen">
+      <div className={clsx('pt-20 mx-auto', isSmallScreen && 'h-screen')}>
         <h2 className="text-3xl font-semibold mb-10">Contact</h2>
         <form onSubmit={handleSubmit} className="space-y-8">
           {/* NAME */}
