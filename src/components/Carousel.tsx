@@ -18,7 +18,10 @@ export default function Carousel({
 }): React.ReactElement {
   const [visible, setVisible] = useState(false)
   useEffect(() => {
-    setVisible(true)
+    function isVisible() {
+      setVisible(true)
+    }
+    isVisible()
   }, [yearOfCreation])
   return (
     <>

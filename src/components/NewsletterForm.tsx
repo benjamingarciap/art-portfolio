@@ -5,9 +5,12 @@ import { Field, Label, Input } from '@headlessui/react'
 export default function NewsletterForm(): React.ReactElement {
   return (
     <div className="w-full">
-      <h2 className="text-3xl font-semibold mb-4">
-        Subscribe to our Newsletter
+      <h2 className="text-3xl font-semibold mb-0 pb-0">
+        Subscribe to my Newsletter
       </h2>
+      <p className="mb-4 font-light text-gray-900 text-[16px]">
+        Stay updated with my latest artworks, exhibitions, and exclusive
+      </p>
 
       <form
         action="https://beng-art.us19.list-manage.com/subscribe/post?u=14e11d2b5fb269de4c1594df4&id=a7dcdbcd6d&f_id=00a96de7f0"

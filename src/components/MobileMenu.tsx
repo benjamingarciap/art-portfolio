@@ -21,6 +21,22 @@ export default function MobileMenu({
   const location = useLocation()
   const bgColor = location.pathname === '/' ? 'bg-black' : 'bg-white'
   const textColor = location.pathname === '/' ? 'text-white' : 'text-black'
+  const [visible, setVisible] = useState(false)
+  useEffect(() => {
+    function visibility() {
+      if (isOpen) {
+        setVisible(false)
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            setVisible(true)
+          })
+        })
+      } else {
+        setVisible(false)
+      }
+    }
+    visibility()
+  }, [isOpen])
 
   useEffect(() => {
     function checkHeight() {
@@ -38,7 +54,7 @@ export default function MobileMenu({
     if (isOpen) {
       setIsOpen(false)
     }
-  }, [])
+  }, [location.pathname])
 
   return (
     <div>
@@ -47,7 +63,9 @@ export default function MobileMenu({
         <div
           className={clsx(
             'absolute inset-0 z-29 shadow-lg overflow-y-auto h-screen',
-            bgColor
+            bgColor,
+            `transition-opacity duration-300 ease-out
+        ${visible ? 'opacity-100' : 'opacity-0'}`
           )}
         >
           <ul
@@ -57,9 +75,9 @@ export default function MobileMenu({
             )}
           >
             {/* Paintings Dropdown */}
-            <li className="w-full text-center">
+            <li className="w-full text-center m-0">
               <Disclosure>
-                {() => (
+                {({ open }) => (
                   <>
                     <DisclosureButton
                       className={clsx(
@@ -70,7 +88,15 @@ export default function MobileMenu({
                       Paintings
                     </DisclosureButton>
 
-                    <DisclosurePanel className="mt-6 flex flex-col items-center space-y-4">
+                    <DisclosurePanel
+                      static
+                      className={clsx(
+                        'mt-6 flex flex-col items-center space-y-4 overflow-hidden transition-all duration-500 ease-out',
+                        open
+                          ? 'max-h-[950px] opacity-100 pointer-events-auto'
+                          : 'max-h-0 opacity-0 pointer-events-none'
+                      )}
+                    >
                       {[
                         '2025',
                         '2024',

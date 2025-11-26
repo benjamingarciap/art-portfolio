@@ -24,7 +24,7 @@ export default function ContactForm({
   }, [])
   return (
     <div className={clsx(isSmallScreen && 'pt-[50px]', 'w-full')}>
-      <div className="pt-20 p-4 max-w-3xl mx-auto">
+      <div className="pt-20 mx-auto h-screen">
         <h2 className="text-3xl font-semibold mb-10">Contact</h2>
         <form onSubmit={handleSubmit} className="space-y-8">
           {/* NAME */}
@@ -53,7 +53,7 @@ export default function ContactForm({
           </Field>
 
           {/* MESSAGE */}
-          <Field className="flex flex-col space-y-2">
+          <Field className="flex flex-col space-y-2 mb-3">
             <Label className="text-sm">Message</Label>
 
             <Input as={Fragment}>

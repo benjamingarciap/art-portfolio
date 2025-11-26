@@ -16,19 +16,22 @@ export default function AboutInfo(): React.ReactElement {
   }, [])
   return (
     <div
-      className={clsx(isSmallScreen && 'pt-[279px]', 'flex pt-30 px-10 gap-10')}
+      className={clsx(
+        'flex gap-10',
+        isSmallScreen ? 'pt-[279px] px-6' : 'pt-30 px-10'
+      )}
     >
       <div className="w-full">
-        <h2 className="text-3xl font-semibold mb-4">About</h2>
+        <h2 className="text-2xl font-semibold mb-4">About</h2>
         <p className="mb-4 font-light text-gray-700 text-sm">
           Born in 1986, Caracas (Venezuela). Currently based in Madrid (Spain).
         </p>
-        <h3 className="font-semibold text-gray-800">EDUCATION</h3>
+        <h3 className="font-normal text-gray-800">Education</h3>
         <p className="mb-4 font-light text-gray-700 text-sm">
           2006-2010 – BFA, Instituto de Diseño de Caracas. Major in Design and
           Illustration. Caracas, Venezuela.
         </p>
-        <h3 className="font-semibold text-gray-800">GROUP EXHIBITIONS</h3>
+        <h3 className="font-normal text-gray-800">Group Exhibitions</h3>
         <p className="mb-4 font-light text-gray-700 text-sm">
           December, 2017 – Scope Art Show, Thinkspace Gallery booth.
           <br />
@@ -58,7 +61,7 @@ export default function AboutInfo(): React.ReactElement {
           February, 2013 – La Ventana Artkao Gallery. Collective exhibition:
           Novísimos
         </p>
-        <h3 className="font-semibold text-gray-800">SOLO EXHIBITIONS</h3>
+        <h3 className="font-normal text-gray-800">Solo exhibitions</h3>
         <p className="mb-4 font-light text-gray-700 text-sm">
           Sept, 2018 – Thinkspace Gallery, Los Angeles: PANACEA
         </p>

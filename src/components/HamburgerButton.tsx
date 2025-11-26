@@ -7,7 +7,7 @@ type HamburgerMenuProps = {
   setIsOpen: (open: boolean) => void
 }
 
-export default function HamburgerMenu({
+export default function HamburgerButton({
   isOpen,
   toggleMenu,
 }: HamburgerMenuProps): React.ReactElement {

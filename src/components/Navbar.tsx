@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useLocation, Link, useNavigation } from 'react-router-dom'
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react'
 import { clsx } from 'clsx'
-import HamburgerMenu from './HamburgerMenu'
+import HamburgerButton from './HamburgerButton'
 import MobileMenu from './MobileMenu'
 
 export default function Navbar(): React.ReactElement {
@@ -38,7 +38,7 @@ export default function Navbar(): React.ReactElement {
       <nav
         className={clsx(
           backgroundColor,
-          'p-4 px-10 flex justify-between fixed top-0 left-0 right-0 z-30'
+          'pt-3 px-5 flex justify-between fixed top-0 left-0 right-0 z-30'
         )}
       >
         <div>
@@ -58,7 +58,7 @@ export default function Navbar(): React.ReactElement {
           </Link>
         </div>
         {isSmallScreen ? (
-          <HamburgerMenu
+          <HamburgerButton
             isOpen={isMenuOpen}
             toggleMenu={() => setIsMenuOpen((open) => !open)}
             setIsOpen={setIsMenuOpen} // <-- Pass setIsOpen here
