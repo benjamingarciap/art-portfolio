@@ -28,7 +28,8 @@ export default function Landing(): React.ReactElement {
           >
             An evolving body of work
             <br />
-            reflecting a journey of artistic exploration.
+            reflecting a journey of
+            <br /> artistic exploration.
             <br />
             <br />
             <a
