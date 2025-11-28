@@ -41,7 +41,7 @@ export default function Navbar(): React.ReactElement {
       <nav
         className={clsx(
           backgroundColor,
-          isSmallScreen ? 'py-5 px-9' : 'pt-10 px-20',
+          isSmallScreen ? 'py-5 px-9' : 'py-10 px-20',
           'flex justify-between fixed top-0 left-0 right-0 z-30 '
         )}
       >
