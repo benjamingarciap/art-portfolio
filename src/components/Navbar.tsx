@@ -32,16 +32,17 @@ export default function Navbar(): React.ReactElement {
   const textColor = location.pathname === '/' ? 'text-[#F8F8F8]' : 'text-[#222]'
   const backgroundColor =
     location.pathname === '/'
-      ? 'bg-transparent backdrop-blur-[5px] [mask-image:linear-gradient(to_bottom,black_0%,black_40%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_40%,transparent_100%)] h-[200px]'
+      ? isMenuOpen
+        ? 'bg-[#131313] transition-colors duration-1000'
+        : 'bg-transparent backdrop-blur-[5px] [mask-image:linear-gradient(to_bottom,black_0%,black_40%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_40%,transparent_100%)] h-[200px]'
       : 'bg-[#F8F8F8]'
-
   return (
     <>
       <nav
         className={clsx(
           backgroundColor,
           isSmallScreen ? 'py-5 px-9' : 'pt-10 px-20',
-          'flex justify-between fixed top-0 left-0 right-0 z-30'
+          'flex justify-between fixed top-0 left-0 right-0 z-30 '
         )}
       >
         <div>

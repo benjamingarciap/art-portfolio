@@ -19,11 +19,16 @@ export default function Landing(): React.ReactElement {
           'absolute top-0 left-0 z-10 tracking-wide h-screen w-full whitespace-pre-line'
         )}
       >
-        <div className="h-screen w-full flex flex-col items-center justify-center p-20">
-          <h2
+        <div
+          className={clsx(
+            isSmallScreen ? 'p-9' : 'p-20',
+            'h-screen w-full flex flex-col items-center justify-center'
+          )}
+        >
+          <p
             className={clsx(
-              isSmallScreen ? 'hidden' : 'text-6xl top-0 left-0 font-normal',
-              'text-white tracking-tightest whitespace-pre-line w-full font-sans'
+              isSmallScreen ? 'text-3xl  font-normal' : 'text-6xl  font-normal',
+              'text-[#F8F8F8] tracking-tightest whitespace-pre-line w-full font-sans'
             )}
           >
             An evolving body of work
@@ -34,11 +39,21 @@ export default function Landing(): React.ReactElement {
             <br />
             <a
               href="contact"
-              className="underline underline-offset-10 decoration-4 cursor-pointer hover:underline"
+              className="relative inline-flex items-center cursor-pointer group no-underline"
             >
-              Get in touch →
+              <span className="relative z-10">Get in touch&nbsp;</span>
+              <span className="relative z-10 inline-block transition-transform duration-300 ease-in-out group-hover:translate-x-2">
+                →
+              </span>
+              {/* underline moved 0.5rem below the text */}
+              <span
+                className={clsx(
+                  isSmallScreen ? 'h-[3px] -bottom-1' : 'h-[5px] -bottom-2',
+                  'absolute left-0 bg-current w-full rounded-sm'
+                )}
+              />
             </a>
-          </h2>
+          </p>
         </div>
       </div>
       <div className="relative w-full h-screen overflow-hidden">
