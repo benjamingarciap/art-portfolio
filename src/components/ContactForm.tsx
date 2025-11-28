@@ -34,7 +34,7 @@ export default function ContactForm({
               type="text"
               name="full_name"
               required
-              className="w-full border p-2 rounded bg-white transition"
+              className="w-full border p-2 rounded transition"
               placeholder="Your name"
             />
           </Field>
@@ -47,7 +47,7 @@ export default function ContactForm({
               type="email"
               name="email"
               required
-              className="w-full border p-2 rounded bg-white transition"
+              className="w-full border p-2 rounded transition "
               placeholder="you@example.com"
             />
           </Field>
@@ -61,7 +61,7 @@ export default function ContactForm({
                 name="message"
                 required
                 rows={5}
-                className="w-full border p-2 rounded bg-white transition"
+                className="w-full border p-2 rounded transition"
                 placeholder="Write your message..."
               />
             </Input>

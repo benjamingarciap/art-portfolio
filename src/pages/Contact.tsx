@@ -25,7 +25,7 @@ export default function Contact(): React.ReactElement {
   }
 
   return (
-    <div className="flex h-screen w-full justify-center items-center p-5 pb-20 max-w-3xl mx-auto">
+    <div className="flex h-screen w-full justify-center items-center p-9 pb-20 max-w-3xl mx-auto">
       <ContactForm handleSubmit={handleSubmit} status={status} />
     </div>
   )

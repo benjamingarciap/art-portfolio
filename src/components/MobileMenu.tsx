@@ -19,7 +19,7 @@ export default function MobileMenu({
 }: HamburgerMenuProps): React.ReactElement {
   const [isSmallScreen, setIsSmallScreen] = useState(false)
   const location = useLocation()
-  const bgColor = location.pathname === '/' ? 'bg-black' : 'bg-white'
+  const bgColor = location.pathname === '/' ? 'bg-[#131313]' : 'bg-[#F8F8F8]'
   const textColor = location.pathname === '/' ? 'text-white' : 'text-black'
   const [visible, setVisible] = useState(false)
   useEffect(() => {

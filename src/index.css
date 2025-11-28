@@ -171,6 +171,9 @@ code {
   justify-content: flex-start !important;
   align-items: flex-start !important;
 }
+.no-padding-left {
+  padding-left: 0 !important;
+}
 
 .swiper-slide img {
   display: block;

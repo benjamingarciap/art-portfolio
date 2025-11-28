@@ -29,16 +29,19 @@ export default function Navbar(): React.ReactElement {
     return () => window.removeEventListener('resize', checkWidth)
   }, [navigation.state])
 
-  const textColor = location.pathname === '/' ? 'text-white' : 'text-black'
+  const textColor = location.pathname === '/' ? 'text-[#F8F8F8]' : 'text-[#222]'
   const backgroundColor =
-    location.pathname === '/' ? 'bg-transparent' : 'bg-white'
+    location.pathname === '/'
+      ? 'bg-transparent backdrop-blur-[5px] [mask-image:linear-gradient(to_bottom,black_0%,black_40%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_0%,black_40%,transparent_100%)] h-[200px]'
+      : 'bg-[#F8F8F8]'
 
   return (
     <>
       <nav
         className={clsx(
           backgroundColor,
-          'pt-3 px-5 flex justify-between fixed top-0 left-0 right-0 z-30'
+          isSmallScreen ? 'py-5 px-9' : 'pt-10 px-20',
+          'flex justify-between fixed top-0 left-0 right-0 z-30'
         )}
       >
         <div>
@@ -49,11 +52,18 @@ export default function Navbar(): React.ReactElement {
           >
             <h1
               className={clsx(
-                'font-sans font-normal text-[28px] uppercase tracking-widest p-0 relative z-50',
+                'font-sans font-black text-[28px] uppercase p-0 relative z-50 tracking-tighter',
                 textColor
               )}
             >
-              {isSmallScreen ? 'BG' : 'Benjamin Garcia'}
+              {isSmallScreen ? (
+                'BG'
+              ) : (
+                <div className="flex flex-col gap-0">
+                  <span className="leading-none">Benjamin</span>
+                  <span className="leading-none">Garcia</span>
+                </div>
+              )}
             </h1>
           </Link>
         </div>
@@ -75,7 +85,7 @@ export default function Navbar(): React.ReactElement {
                         location.pathname.startsWith('/paintings')
                           ? 'underline decoration-1 underline-offset-5'
                           : '',
-                        'focus:outline-none hover:underline decoration-1 underline-offset-5 font-light cursor-pointer',
+                        'focus:outline-none hover:underline decoration-1 underline-offset-5 font-medium cursor-pointer',
                         open ? 'underline decoration-1 underline-offset-5' : ''
                       )}
                     >
@@ -124,7 +134,7 @@ export default function Navbar(): React.ReactElement {
                       ? 'underline decoration-1 underline-offset-5'
                       : '',
                     textColor,
-                    'hover:underline decoration-1 underline-offset-5 font-light'
+                    'hover:underline decoration-1 underline-offset-5 font-medium'
                   )}
                 >
                   {item.charAt(0).toUpperCase() + item.slice(1)}

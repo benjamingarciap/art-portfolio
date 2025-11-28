@@ -6,7 +6,7 @@ export default function AboutInfo(): React.ReactElement {
 
   useEffect(() => {
     function checkHeight() {
-      const small = window.innerHeight <= 667 || window.innerHeight === 740
+      const small = window.innerWidth <= 667 || window.innerHeight === 740
       setIsSmallScreen(small)
       console.log('Height check:', window.innerHeight, small)
     }
@@ -18,21 +18,21 @@ export default function AboutInfo(): React.ReactElement {
     <div
       className={clsx(
         'flex gap-10',
-        isSmallScreen ? 'pt-[279px] px-6' : 'pt-30 px-10'
+        isSmallScreen ? 'pt-[320px] px-9' : 'pt-30 px-20'
       )}
     >
       <div className="w-full">
         <h2 className="text-2xl font-semibold mb-4">About</h2>
-        <p className="mb-4 font-light text-gray-700 text-sm">
+        <p className="mb-4 font-normal text-gray-700 text-sm">
           Born in 1986, Caracas (Venezuela). Currently based in Madrid (Spain).
         </p>
-        <h3 className="font-normal text-gray-800">Education</h3>
-        <p className="mb-4 font-light text-gray-700 text-sm">
+        <h3 className="font-medium text-gray-900">Education</h3>
+        <p className="mb-4 font-normal text-gray-700 text-sm">
           2006-2010 – BFA, Instituto de Diseño de Caracas. Major in Design and
           Illustration. Caracas, Venezuela.
         </p>
-        <h3 className="font-normal text-gray-800">Group Exhibitions</h3>
-        <p className="mb-4 font-light text-gray-700 text-sm">
+        <h3 className="font-medium text-gray-900">Group Exhibitions</h3>
+        <p className="mb-4 font-normal text-gray-700 text-sm">
           December, 2017 – Scope Art Show, Thinkspace Gallery booth.
           <br />
           June, 2017 – & Gallery Miami, A Black Ship Moment, curated by Black
@@ -61,8 +61,8 @@ export default function AboutInfo(): React.ReactElement {
           February, 2013 – La Ventana Artkao Gallery. Collective exhibition:
           Novísimos
         </p>
-        <h3 className="font-normal text-gray-800">Solo exhibitions</h3>
-        <p className="mb-4 font-light text-gray-700 text-sm">
+        <h3 className="font-medium text-gray-900">Solo exhibitions</h3>
+        <p className="mb-4 font-normal text-gray-700 text-sm">
           Sept, 2018 – Thinkspace Gallery, Los Angeles: PANACEA
         </p>
       </div>

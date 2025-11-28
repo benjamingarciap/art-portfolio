@@ -2,6 +2,7 @@ import { Dialog, Transition } from '@headlessui/react'
 import { Fragment, useState } from 'react'
 import images from '../data/images.json'
 import formatTitleAndDetailsWithYear from '../lib/formatTitleAndDetailsWithYear'
+import { Swiper, SwiperSlide } from 'swiper/react'
 
 export default function MobileImageGrid({
   yearOfCreation,
@@ -11,10 +12,10 @@ export default function MobileImageGrid({
   const [selected, setSelected] = useState<string | null>(null)
 
   return (
-    <div className="pt-20 h-screen flex w-full flex-col">
+    <div className="pt-20 h-screen flex w-full flex-col items-center">
       {/* Grid */}
 
-      <h2 className="pl-5 text-xl font-semibold mb-4">{yearOfCreation}</h2>
+      <h2 className="text-xl font-semibold mb-4">{yearOfCreation}</h2>
       <div className="grid grid-cols-2 gap-0.5 w-full">
         {images.map((img) => {
           const { title, details, year } = formatTitleAndDetailsWithYear(
@@ -58,10 +59,12 @@ export default function MobileImageGrid({
               leaveTo="opacity-0 scale-95"
             >
               <Dialog.Panel>
-                <img
-                  src={selected ?? ''}
-                  className="max-h-[90vh] max-w-[100vw]"
-                />
+                <>
+                  <img
+                    src={selected ?? ''}
+                    className="max-h-[90vh] max-w-[100vw]"
+                  />
+                </>
               </Dialog.Panel>
             </Transition.Child>
           </div>
