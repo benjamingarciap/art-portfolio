@@ -6,26 +6,6 @@ A modern, responsive portfolio website showcasing the artistic work of Benjamin 
 
 This portfolio website serves as a comprehensive platform for displaying paintings, providing artist information, and facilitating visitor engagement through contact and newsletter features. The application features a clean, minimalist design with smooth animations and responsive layouts optimized for both desktop and mobile devices.
 
-## Features
-
-### Core Functionality
-
-- **Landing Page**: Full-screen video background with animated hero text and call-to-action
-- **Paintings Gallery**: Year-organized collection (2013-2025) with:
-  - Desktop: Swiper carousel with custom navigation controls
-  - Mobile: Grid layout with lightbox image viewer
-- **About Page**: Artist biography, education, and exhibition history
-- **Contact Form**: Integrated email submission via Formspree
-- **Newsletter Subscription**: Mailchimp integration for mailing list management
-
-### User Experience
-
-- Fully responsive design with mobile-first approach
-- Smooth page transitions and animations
-- Custom hamburger menu with fade effects for mobile
-- Dynamic navbar with gradient fade on landing page
-- Optimized image delivery via Cloudinary CDN
-
 ## Tech Stack
 
 ### Core Technologies
@@ -50,6 +30,26 @@ This portfolio website serves as a comprehensive platform for displaying paintin
 ### Deployment
 
 - **Vercel** - Hosting and continuous deployment
+
+## Features
+
+### Core Functionality
+
+- **Landing Page**: Full-screen video background with animated hero text and call-to-action
+- **Paintings Gallery**: Year-organized collection (2013-2025) with:
+  - Desktop: Swiper carousel with custom navigation controls
+  - Mobile: Grid layout with lightbox image viewer
+- **About Page**: Artist biography, education, and exhibition history
+- **Contact Form**: Integrated email submission via Formspree
+- **Newsletter Subscription**: Mailchimp integration for mailing list management
+
+### User Experience
+
+- Fully responsive design with mobile-first approach
+- Smooth page transitions and animations
+- Custom hamburger menu with fade effects for mobile
+- Dynamic navbar with gradient fade on landing page
+- Optimized image delivery via Cloudinary CDN
 
 ## Getting Started
 
