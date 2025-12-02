@@ -158,7 +158,7 @@ This project is private and proprietary.
 
 Benjamin Garcia
 
-- Portfolio: [URL to add]
-- Email: [Via contact form on website]
+- Portfolio: [https://www.beng-art.com/](https://www.beng-art.com/)
+- Email: Via contact form on website
 
 ---
