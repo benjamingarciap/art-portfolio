@@ -2,6 +2,8 @@
 
 A modern, responsive portfolio website showcasing the artistic work of Benjamin Garcia, a visual artist based in Madrid, Spain.
 
+- Portfolio: [https://www.beng-art.com/](https://www.beng-art.com/)
+
 ## Overview
 
 This portfolio website serves as a comprehensive platform for displaying paintings, providing artist information, and facilitating visitor engagement through contact and newsletter features. The application features a clean, minimalist design with smooth animations and responsive layouts optimized for both desktop and mobile devices.
