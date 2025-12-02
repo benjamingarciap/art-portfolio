@@ -168,6 +168,7 @@ code {
   height: 700px !important;
   /* Center slide text vertically */
   display: flex;
+  flex-direction: column;
   justify-content: flex-start !important;
   align-items: flex-start !important;
 }
