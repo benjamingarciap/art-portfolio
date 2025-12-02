@@ -94,7 +94,7 @@ export default function Navbar(): React.ReactElement {
                     </PopoverButton>
                     <PopoverPanel
                       anchor="bottom"
-                      className="absolute left-0 mt-2 w-48 shadow-lg ring-opacity-5 z-30 bg-gray-800 p-4"
+                      className="absolute left-0 mt-2 w-48 shadow-lg ring-opacity-5 z-30 bg-[rgba(0,0,0,0.9)] p-4"
                     >
                       <div className="flex flex-col w-full gap-4">
                         {[
